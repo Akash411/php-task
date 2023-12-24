@@ -1,4 +1,5 @@
 <?php 
+require_once('config.php');
   if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     $name = $_POST['name']; 
     $sub1 = $_POST['subject1']; 
@@ -18,10 +19,6 @@
 
         echo "<strong>average marks $average <br></strong>";
         // mysql data
-        $servername = "localhost:3307";
-        $username = "root";
-        $password = "";
-        $dbname = "personality_traits_db";
         
         // Create connection
         if ($_SERVER["REQUEST_METHOD"] == "POST") { 
@@ -34,10 +31,10 @@
         }else {
             echo "<h1>Mysql connected!</h1>";
 
-            // insert record of student
+            // insert record of student   
             $insertQuery = "INSERT INTO student_marks (name, subject1, subject2, subject3) VALUES ('$name', $sub1, $sub2, $sub3)";
             if ($conn->query($insertQuery) === TRUE) {
-                echo "<strong>New record created successfully! </strong><br>";
+                echo "New record created successfully!<br>";
             } else {
                 echo "Error: " . $insertQuery . "<br>" . $conn->error;
             }   
