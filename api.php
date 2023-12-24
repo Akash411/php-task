@@ -18,7 +18,6 @@ require_once('config.php');
         echo "subect 3 => ".$sub3."<br>"; 
 
         echo "<strong>average marks $average <br></strong>";
-        // mysql data
         
         // Create connection
         if ($_SERVER["REQUEST_METHOD"] == "POST") { 
