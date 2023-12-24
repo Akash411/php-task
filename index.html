@@ -44,6 +44,10 @@
         alert("All fields must be filled out");
         return false;
       }
+      if(subject1 > 100 || subject1 < 0 || subject2 > 100 || subject2 < 0 || subject3 > 100 || subject3 < 0){
+        alert("marks should be in range of 0-100");
+        return false;
+      }
 
       return true;
     }
