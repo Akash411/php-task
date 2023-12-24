@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personality Traits</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Marks and Name</h2>
+    <form id="marksForm" method="post" action="api.php" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      
+      <div class="form-group">
+        <label for="subject1">Subject 1:</label>
+        <input type="number" class="form-control" id="subject1" name="subject1">
+      </div>
+      
+      <div class="form-group">
+        <label for="subject2">Subject 2:</label>
+        <input type="number" class="form-control" id="subject2" name="subject2">
+      </div>
+      
+      <div class="form-group">
+        <label for="subject3">Subject 3:</label>
+        <input type="number" class="form-control" id="subject3" name="subject3">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p id="result"></p>
+  </div>
+  
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var subject1 = document.getElementById("subject1").value;
+      var subject2 = document.getElementById("subject2").value;
+      var subject3 = document.getElementById("subject3").value;
+
+      if (name === '' || subject1 === '' || subject2 === '' || subject3 === '') {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
