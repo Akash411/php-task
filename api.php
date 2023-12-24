@@ -22,7 +22,7 @@ require_once('config.php');
         
         // Create connection
         if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
 
         // Check connection
